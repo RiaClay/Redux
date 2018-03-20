@@ -6,14 +6,11 @@ const updatedTodoList = (chores = [], action) => {
             return chores.concat(action.todoItem);
 
         case TOGGLE_TODO:
-            return chores.map(updatedTodoList => {
-                if (updatedTodoList.id !== action.id) {
-                    return updatedTodoList
-                }
-                return Object.assign({}, updatedTodoList,)
-            })
+            chores[action.todoItem].complete = !chores[action.todoItem].complete;
+            return chores;
+
         default:
-        return chores
+        return chores;
     }
 }
 
