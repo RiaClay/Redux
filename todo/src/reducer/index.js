@@ -1,16 +1,16 @@
 import { ADD_TODO, TOGGLE_TODO } from '../actions';
 
-const updatedTodoList = (chores = [], action) => {
+const updatedTodoList = (todos = [], action) => {
     switch (action.type) {
         case ADD_TODO:
-            return chores.concat(action.todoItem);
+            return todos.concat(action.todoItem);
 
         case TOGGLE_TODO:
-            chores[action.todoItem].complete = !chores[action.todoItem].complete;
-            return chores;
+            todos[action.todoItem].complete = !todos[action.todoItem].complete;
+            return todos;
 
         default:
-        return chores;
+        return todos;
     }
 }
 
