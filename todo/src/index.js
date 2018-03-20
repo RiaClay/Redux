@@ -4,9 +4,10 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import onceComplete from './reducer';
+import updatedTodoList from './reducer'
 
-const store = createStore(onceComplete);
+
+const store = createStore(updatedTodoList);
 
 ReactDOM.render(
 <Provider store={store}>
